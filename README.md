@@ -1,1 +1,3 @@
-# note-list
+# Note list
+
+Recruitment task for Omni Calculator.
