@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url("/fonts/Nunito-Regular.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'Nunito Bold';
+    src: url("/fonts/Nunito-Bold.ttf") format('truetype');
+}
+
+:root {
+    --text: #707070;
+    --background-dark: #eceeef;
+    --background-medium: #fcfcfc;
+    --background-light: #ffffff;
+    --border: #e0e0e0;
+    --warning: #eb5858;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-medium);
+}
