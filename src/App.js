@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header"
 import Wrapper from "./components/Wrapper/Wrapper"
 import NoteForm from "./components/NoteForm/NoteForm"
+import Notes from "./components/Notes/Notes"
 
 const App = () => {
 	return (
@@ -13,6 +14,7 @@ const App = () => {
 					<Route path="/" element={
 						<>
 							<NoteForm />
+							<Notes />
 						</>
 					}></Route>
 				</Routes>
