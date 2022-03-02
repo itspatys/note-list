@@ -1,5 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
+import { NotesProvider } from "./context/NotesContext";
+
 import Header from "./components/Header/Header"
 import Wrapper from "./components/Wrapper/Wrapper"
 import NoteForm from "./components/NoteForm/NoteForm"
@@ -10,17 +12,19 @@ const App = () => {
 		<div className="App">
 			<Header />
 			<Wrapper>
-				<Routes>
-					<Route path="/" element={
-						<>
-							<NoteForm />
-							<Notes />
-						</>
-					}></Route>
-				</Routes>
+				<NotesProvider>
+					<Routes>
+						<Route path="/" element={
+							<>
+								<NoteForm />
+								<Notes />
+							</>
+						}></Route>
+					</Routes>
+				</NotesProvider>
 			</Wrapper>
 		</div>
-);
+	);
 }
 
 export default App;

@@ -1,8 +1,9 @@
 import "./Note.scss"
 
-import WarningButton from "../utils/WarningButton/WarningButton"
+import DeleteButton from "../utils/DeleteButton/DeleteButton"
 
 const Note = ({ date, text, isHome }) => {
+
     return (
         <div className="Note">
             <div className="Note__grid-element--text">
@@ -10,7 +11,10 @@ const Note = ({ date, text, isHome }) => {
             </div>
             <div className="Note__grid-element--button">
                 <div className="Note__button-wrapper">
-                    <WarningButton text="Delete note" />
+                    <DeleteButton 
+                        text="Delete note"
+                        date={date}
+                    />
                 </div>
                 </div>
             <div className="Note__grid-element--date">

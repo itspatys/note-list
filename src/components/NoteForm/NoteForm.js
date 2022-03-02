@@ -1,6 +1,23 @@
+import { useContext, useState } from "react"
+import { NotesContext } from "../../context/NotesContext"
+
 import "./NoteForm.scss"
 
 const NoteForm = () => {
+
+    const { setNotes } = useContext(NotesContext)
+    const [text, setText] = useState("")
+
+    const handleNoteAdd = (e) => {
+        e.preventDefault()
+        setNotes((oldNotes) => ([...oldNotes, {text: text, date: new Date()}]))
+        setText("")
+    }
+
+    const handleTextChange = (e) => {
+        setText(e.target.value)
+    }
+
     return (
         <div className="NoteForm">
             <h2
@@ -13,10 +30,14 @@ const NoteForm = () => {
                     <textarea 
                         placeholder="Note text"
                         className="NoteForm__textarea"
+                        onChange={handleTextChange}
+                        value={text}
                     ></textarea>
                 </div>
                 <div className="NoteForm__button-wrapper">
-                    <button>Add note</button>
+                    <button
+                        onClick={handleNoteAdd}
+                    >Add note</button>
                 </div>
             </form>
         </div>
