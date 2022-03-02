@@ -10,7 +10,7 @@ const NoteForm = () => {
 
     const handleNoteAdd = (e) => {
         e.preventDefault()
-        setNotes((oldNotes) => ([...oldNotes, {text: text, date: new Date()}]))
+        setNotes((oldNotes) => ([{text: text, date: new Date()}, ...oldNotes]))
         setText("")
     }
 

@@ -21,6 +21,7 @@ const Notes = () => {
                                 text={note.text}
                                 date={note.date}
                                 key={note.date.getTime()}
+                                isNotePage={false}
                             />
                         )
                     })

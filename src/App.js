@@ -6,6 +6,7 @@ import Header from "./components/Header/Header"
 import Wrapper from "./components/Wrapper/Wrapper"
 import NoteForm from "./components/NoteForm/NoteForm"
 import Notes from "./components/Notes/Notes"
+import NotePage from "./components/NotePage/NotePage";
 
 const App = () => {
 	return (
@@ -20,6 +21,7 @@ const App = () => {
 								<Notes />
 							</>
 						}></Route>
+						<Route path="/note/:dateTime" element={<NotePage />} />
 					</Routes>
 				</NotesProvider>
 			</Wrapper>
