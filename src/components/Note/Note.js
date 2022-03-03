@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import { ReactMarkdown } from "react-markdown/lib/react-markdown"
 
 import "./Note.scss"
 
@@ -9,7 +10,11 @@ const Note = ({ date, text, isNotePage }) => {
     return (
         <div className={isNotePage ? "Note Note--notepage" : "Note"}>
             <div className="Note__grid-element--text">
-                <div className="Note__text">{text}</div>
+                <div className="Note__text">
+                    <ReactMarkdown>
+                        {text}
+                    </ReactMarkdown>
+                </div>
             </div>
             <div className="Note__grid-element--button">
                 <div className="Note__button-wrapper">
