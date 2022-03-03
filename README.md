@@ -13,17 +13,17 @@ Live version: [https://note-list-two.vercel.app/](https://note-list-two.vercel.a
 To run this project locally clone repository:
 
 ```
-$ https://github.com/itspatys/note-list.git
+https://github.com/itspatys/note-list.git
 ```
 
 install dependencies:
 
 ```
-$ npm install
+npm install
 ```
 
 and start local server:
 
 ```
-$ npm run start
+npm run start
 ```
