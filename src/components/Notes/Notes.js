@@ -1,18 +1,31 @@
+import { useContext } from "react"
+import { NotesContext } from "../../context/NotesContext"
+
 import Note from "./../Note/Note"
 
 import "./Notes.scss"
 
 const Notes = () => {
+    const { notes } = useContext(NotesContext)
+
     return (
         <div className="Notes">
             <div className="Notes__header-wrapper">
-                <h1>Latest notes</h1>
+                <h1>{notes.length ? "Latest notes" : "No notes avaiable"}</h1>
             </div>
             <div className="Notes__notes">
-                <Note 
-                    text={"test text note example"} 
-                    date={new Date()}
-                />
+                {
+                    notes.map((note) => {
+                        return (
+                            <Note
+                                text={note.text}
+                                date={note.date}
+                                key={note.date.getTime()}
+                                isNotePage={false}
+                            />
+                        )
+                    })
+                }
             </div>
         </div>
     )
