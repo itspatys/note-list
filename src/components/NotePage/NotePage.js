@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { NotesContext } from '../../context/NotesContext'
 
 import DeleteButton from '../utils/DeleteButton/DeleteButton'
@@ -10,6 +10,7 @@ import './NotePage.scss'
 const NotePage = () => {
     const { notes } = useContext(NotesContext)
     const time = useParams()
+    const navigate = useNavigate()
 
     const note = notes.filter((note) => {
         return parseInt(note.date.getTime()) === parseInt(time.dateTime)
@@ -20,13 +21,9 @@ const NotePage = () => {
             <div className="NotePage__nav">
                 <div className="NotePage__nav-element">
                     <div className="NotePage__nav-button-wrapper">
-                        <button>Home</button>
-                    </div>
-                </div>
-                <div className="NotePage__nav-element">
-                    <div className="NotePage__nav-button-wrapper NotePage__nav-element--navigate">
-                        <button>Back</button>
-                        <button>Forward</button>
+                        <button
+                            onClick={() => navigate("/")}
+                        >Home</button>
                     </div>
                 </div>
                 <div className="NotePage__nav-element NotePage__nav-element--delete">

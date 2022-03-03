@@ -15,9 +15,6 @@ const Notes = () => {
             </div>
             <div className="Notes__notes">
                 {
-                    console.log(notes)
-                }
-                {
                     notes.map((note) => {
                         return (
                             <Note

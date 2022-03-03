@@ -7,6 +7,8 @@ import DeleteButton from "../utils/DeleteButton/DeleteButton"
 
 const Note = ({ date, text, isNotePage }) => {
 
+    const formatedDate = (date.getMonth() + 1 > 9 ? date.getMonth() + 1 : ( "0" + (date.getMonth() + 1))) + "/" + (date.getDate() > 9 ? date.getDate() : ("0" + date.getDate())) + "/" + date.getFullYear()
+
     return (
         <div className={isNotePage ? "Note Note--notepage" : "Note"}>
             <div className="Note__grid-element--text">
@@ -28,9 +30,13 @@ const Note = ({ date, text, isNotePage }) => {
                 </div>
             <div className="Note__grid-element--date">
                 <div className={isNotePage ? "Note__date-wrapper--notepage" : "Note__date-wrapper"}>
-                    <Link to={`/note/${date.getTime()}`}>
-                        {date.getMonth() + 1 > 9 ? date.getMonth() + 1 : "0" + (date.getMonth() + 1) }/{date.getDate() > 9 ? date.getDate() : "0" + date.getDate()}/{date.getFullYear()}
-                    </Link>
+                    {isNotePage ?
+                        formatedDate
+                    :
+                        <Link to={`/note/${date.getTime()}`}>
+                            {formatedDate}
+                        </Link>
+                    }
                 </div>
             </div>
         </div>

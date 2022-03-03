@@ -4,5 +4,10 @@
     padding: .4em 1em;
     border: 1px solid var(--background-light);
     border-radius: 0.4em;
+    transition: .3s;
+
+    &:hover {
+        background-color: var(--warning-dark);
+    }
 
 }
